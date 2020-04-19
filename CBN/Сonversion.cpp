@@ -102,17 +102,17 @@ string Ñonversion::ConvertToBinary(int argc, char* argv[])
 		if (temp.find("--number=") != string::npos)
 			value =  temp.substr(temp.find('=') + 1, temp.length() - 1);
 		else if (temp.find("--number") != string::npos && ++i < argc)
-			value = string(temp);
+			value = string(argv[i]);
 
 		if (temp.find("--method=") != string::npos)
 			typeConvert = temp.substr(temp.find('=') + 1, temp.length() - 1);
 		else if (temp.find("--method") != string::npos && ++i < argc)
-			typeConvert = string(temp);
+			typeConvert = string(argv[i]);
 
 		if (temp.find("--type=") != string::npos)
 			typeValue = temp.substr(temp.find('=') + 1, temp.length() - 1);
 		else if (temp.find("--type") != string::npos && ++i < argc)
-			typeValue = string(temp);
+			typeValue = string(argv[i]);
 	}
 
 	if ((typeValue != "double") && (typeValue != "float"))
